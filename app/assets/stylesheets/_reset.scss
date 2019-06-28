@@ -41,6 +41,9 @@ td {
 	margin:0;
 	padding:0;
 }
+* {
+	box-sizing: border-box;
+}
 table {
 	border-collapse:collapse;
 	border-spacing:0;
@@ -110,4 +113,16 @@ select {
 /*because legend doesn't inherit in IE */
 legend {
 	color:#000;
+}
+
+a {
+	text-decoration: none;
+}
+
+.main-header a {
+	color: #38aef0;
+}
+
+.chat-side a {
+	color: white;
 }
