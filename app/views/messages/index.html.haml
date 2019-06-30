@@ -1,18 +1,14 @@
 
-.flash-box
-  .flash-box__message
-    グループを作成しました
-
 .wrapper
   .chat-side
     .side-header
       .side-header__box
         .side-header__box__user-name 
-          test-user
+          = current_user.name
         .side-header__box__menu
           =link_to"", class: "side-header__box__menu__new-group" do
             = fa_icon 'edit'
-          =link_to"", class: "side-header__box__menu__edit-user" do
+          =link_to edit_user_path(current_user), class: "side-header__box__menu__edit-user" do
             = fa_icon 'cog'
     .groups
       =link_to"", class: "group" do
