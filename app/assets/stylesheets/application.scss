@@ -1,6 +1,7 @@
 @import "reset";
 @import "variable";
-@import "messages";
+@import "modules/messages";
+@import "modules/side";
 @import "font-awesome";
-@import "user";
-@import "flash";
+@import "modules/user";
+@import "modules/flash";
