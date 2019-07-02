@@ -87,6 +87,9 @@
     right: 10px;
     font-size: 1.3rem;
     cursor: pointer;
+    &__file {
+      display: none;
+    }
   }
 }
 
@@ -94,10 +97,6 @@
   font-size: 16px;
   color: $main-gray;
   padding-left: 10px;
-}
-  
-#file-upload {
-  display: none;
 }
 
 .submit-btn {
