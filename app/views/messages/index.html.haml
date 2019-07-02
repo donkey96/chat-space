@@ -5,29 +5,16 @@
     .main-header
       .main-header__left-box
         .main-header__left-box__current-group 
-          test-group
+          = @group.name
         .main-header__left-box__member-list
-          Members: test-user
+          Members: 
+          - @group.users.each do |user|
+            = user.name
       .main-header__edit-btn 
         = link_to edit_group_path(current_user), class: "edit-btn" do
           Edit
     .messages
-      .message
-        .message__upper-info
-          .message__upper-info__talker
-            test-user
-          .message__upper-info__date
-            2019/02/13(Wed) 17:50:36
-        .message__text
-          こんにちは！
-      .message
-        .message__upper-info
-          .message__upper-info__talker
-            test-user
-          .message__upper-info__date
-            2019/02/13(Wed) 17:50:42
-        .message__text
-          さようなら！
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         .new-message
@@ -35,5 +22,5 @@
             = f.text_field :body, class: "input-box__text", placeholder: "type a message"
             = f.label :image, class: "input-box__image" do
               = fa_icon 'image'
-              = f.file_field :image, class: "input-box_image__file" id: "file-upload"
+              = f.file_field :image, class: "input-box__image__file"
           = f.submit 'Send', class: "submit-btn"
