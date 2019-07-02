@@ -29,10 +29,11 @@
         .message__text
           さようなら！
     .form
-      .new-message
-        .input-box
-          %input{type: "text", placeholder: "type a message", class: "input-box__text" }
-          %label{for: "file-upload", class: "input-box__image"}
-            = fa_icon 'image'
-          %input{type: "file", id: "file-upload"}
-        %input{type: "submit", value: "Send", class: "submit-btn"}
+      = form_for [@group, @message] do |f|
+        .new-message
+          .input-box
+            = f.text_field :body, class: "input-box__text", placeholder: "type a message"
+            = f.label :image, class: "input-box__image" do
+              = fa_icon 'image'
+              = f.file_field :image, class: "input-box_image__file" id: "file-upload"
+          = f.submit 'Send', class: "submit-btn"
