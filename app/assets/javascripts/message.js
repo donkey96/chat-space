@@ -15,7 +15,7 @@ $(function(){
                     <p class="message__text__body">
                       ${message.body}
                     </p>
-                      ${image}
+                    ${image}
                   </div>
                 </div>`
     return html;
@@ -34,10 +34,13 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html)
-      $('#meesage_body').val('')
+      $('.messages').append(html);
+      $('#meesage_body').val('');
+      $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight});
+      $('.submit-btn').removeAttr('disabled');
     })
     .fail(function(){
+      alert('error');
 
     })
   })
