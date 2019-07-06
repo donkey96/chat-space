@@ -35,6 +35,10 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
+      $('#meesage_body').val('')
+    })
+    .fail(function(){
+
     })
   })
-})
+});
