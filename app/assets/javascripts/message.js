@@ -38,8 +38,6 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight});
-      $('#message_body').val('');
-      $('#message_image').val('');
       $('.submit-btn').removeAttr('disabled');
       $('form')[0].reset();
     })
