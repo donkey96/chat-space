@@ -16,6 +16,4 @@
 # Ignore Byebug command history file.
 .byebug_history
 # Ignore uploaded files in development
- /public/uploads/
-public/uploads/message/image/64/45811_ext_01_1.png
-public/uploads/message/image/65/45811_ext_01_1.png
+public/uploads/
