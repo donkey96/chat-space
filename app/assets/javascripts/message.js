@@ -41,6 +41,7 @@ $(function(){
       $('#message_body').val('');
       $('#message_image').val('');
       $('.submit-btn').removeAttr('disabled');
+      $('form')[0].reset();
     })
     .fail(function(){
       alert('error');
