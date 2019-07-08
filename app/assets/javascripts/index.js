@@ -36,7 +36,7 @@ function appendUser(user) {
       }
     })
     .fail(function () {
-      alert('名前の検索に失敗しました');
+      alert('ユーザー検索に失敗しました');
     })
   });
 });
