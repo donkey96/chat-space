@@ -17,11 +17,15 @@ function appendUser(user) {
 
   $("#user-search-field").on("keyup", function () {
     var input = $("#user-search-field").val();
-
+    var user_ids = [];
+    $(".chat-group-user__id").each(function () {
+      user_ids.push($(this).val());
+    });
+      console.log(user_ids)
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input, user_ids: user_ids },
       dataType: 'json'
     })
     .done(function (users) {
@@ -44,7 +48,7 @@ function appendUser(user) {
 
   function appendUserAdd(user_name, user_id) {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='$chat-group-user-${ user_id }'>
-                  <input name='group[user_ids][]' type='hidden' value='${ user_id }'>
+                  <input class='chat-group-user__id' name='group[user_ids][]' type='hidden' value='${ user_id }'>
                   <p class='chat-group-user__name'>${ user_name }</p>
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
